@@ -5,8 +5,33 @@ window.onload = init;
 
 function init(){
     getData();
-};
+    var player = document.getElementById("player");
+    let playarea = document.getElementById("main");
+    player.onplay = onPlayEvent;
+    player.onpause = onPauseEvent;
+    playarea.onclick = onPlayClick;
 
+    const interval = setInterval(function() {
+        if(!player.paused){
+            getData();
+        }
+      }, 5000);
+};
+function onPlayClick(){
+    let player = document.getElementById("player");
+    player.paused ? player.play() : player.pause()
+}
+function onPauseEvent(){
+    let playArea = document.getElementById("main");
+    playArea.style.backgroundColor = "black";
+    playArea.style.color = "snow";
+}
+function onPlayEvent(){
+    let playArea = document.getElementById("main");
+    playArea.style.backgroundColor = "snow";
+    playArea.style.color = "black";
+
+}
 function updateSongInfo() {
     let data = JSON.parse(this.responseText);
     console.log(data);

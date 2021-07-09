@@ -1,0 +1,39 @@
+@font-face {
+    font-family: cyberpunkwaifus;
+    src: url("../fonts/CyberpunkWaifus.ttf");
+}
+
+body {
+    display: flex;
+    font-family: cyberpunkwaifus;
+    background-color: black;
+    color: snow;
+    height: 100vh;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+#main:hover{
+    box-shadow: -2px 2px crimson;
+}
+#main:active{
+    box-shadow: 2px -2px crimson;
+    background-color: gray;
+    color:snow;
+}
+#main{
+    color:black;
+    background-color: snow;
+    height: 10%;
+}
+
+#main h2{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#main h5{
+    color:snow;
+    margin-top: 30px;
+}
