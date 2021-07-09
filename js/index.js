@@ -20,6 +20,7 @@ function init(){
 function onPlayClick(){
     let player = document.getElementById("player");
     player.paused ? player.play() : player.pause()
+    getData();
 }
 function onPauseEvent(){
     let playArea = document.getElementById("main");
@@ -34,7 +35,6 @@ function onPlayEvent(){
 }
 function updateSongInfo() {
     let data = JSON.parse(this.responseText);
-    console.log(data);
     let songTitle = document.getElementById("songtitle");
     let artist = document.getElementById("artist");
     songTitle.innerHTML = data.icestats.source.title;
